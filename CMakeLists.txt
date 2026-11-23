@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.10)
+project(bminor_phase1 CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if(MSVC)
+  add_compile_options(/W4)
+else()
+  add_compile_options(-Wall -Wextra)
+endif()
+
+add_library(bminor_core src/Token.cpp src/Lexer.cpp src/AST.cpp src/Parser.cpp src/Highlighter.cpp)
+target_include_directories(bminor_core PUBLIC src)
+
+add_executable(bminor src/main.cpp)
+target_link_libraries(bminor bminor_core)
+
+enable_testing()
+add_executable(bminor_tests tests/test_main.cpp)
+target_link_libraries(bminor_tests bminor_core)
+add_test(NAME unit COMMAND bminor_tests)
