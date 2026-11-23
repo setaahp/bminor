@@ -1,0 +1,18 @@
+// computes n!
+factorial: function integer ( n: integer ) = {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+main: function integer () = {
+    x: integer = 5;
+    i: integer;
+    name: string = "result:\n";
+    c: char = '\n';
+    flags: array [3] boolean = {true, false, true};
+    /* block
+       comment */
+    for (i = 0; i < x; i++) { flags[0] = !flags[1] && true; }
+    print name, factorial(x), 2 ^ 3 ^ 2, -x;
+    return 0;
+}

@@ -1,1 +1,13 @@
-
+x: integer = ;
+y: integer = 42;
+z: integer = 5@;
+s: string = "unterminated
+f: function integer (a: integer) = {
+    if (y > 0
+    {
+        return y;
+    }
+    a = 1 2;
+    return a;
+}
+/* never closed
