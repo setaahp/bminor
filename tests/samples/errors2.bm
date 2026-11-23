@@ -1,0 +1,8 @@
+// instructor-spec rules
+square: function integer ( x: integer ) = {
+    inner: function void () = { }
+    while (x > 0) { x--; }
+    return x ^ 2;
+}
+big: integer = 99999999999999999999;
+ok: char = '\q';
